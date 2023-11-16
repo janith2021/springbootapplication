@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.model.Student;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,6 +76,7 @@ public class StudentService {
             Student student = students.stream().filter(s-> s.getId().equals(id)).findFirst().get();
 //            students.removeIf(s->s.getId().equals(id));
             students.remove(student);
+
             return "Student Deleted Successfully.";
         }catch (Exception e){
             return e.getMessage();
